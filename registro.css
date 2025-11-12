@@ -1,0 +1,202 @@
+:root {
+  --azul: #005BAC;
+  --azul-oscuro: #003f7f;
+  --amarillo: #FFD447;
+  --blanco: #ffffff;
+  --fondo: linear-gradient(135deg, #4e73df, #224abe);
+}
+
+/* Fondo general */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+.registro-container {
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  background: var(--blanco);
+  animation: fadein 1s ease;
+}
+
+/* Panel izquierdo */
+.registro-left {
+  flex: 1;
+  background: var(--azul);
+  color: #fff;
+  text-align: center;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Fondo blanco detrás del logo (centrado perfectamente) */
+.logo-bg {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 20px auto;
+  width: 210px; /* tamaño fijo para mantener proporción */
+  height: 210px;
+  transition: transform 0.3s ease;
+}
+.logo-bg:hover {
+  transform: scale(1.05);
+}
+
+/* Logo */
+.logo {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* Títulos y texto */
+.titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.frase {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Panel derecho */
+.registro-right {
+  flex: 1.2;
+  padding: 50px 55px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  color: var(--azul);
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Campos del formulario */
+.form-floating .form-control {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.form-floating .form-control:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(0, 91, 172, 0.2);
+}
+
+/* Icono del ojo */
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.toggle-password:hover { color: var(--azul); }
+
+/* Botón */
+.btn-primary {
+  background: var(--amarillo);
+  border: none;
+  font-weight: 800;
+  padding: 12px;
+  border-radius: 12px;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #ffcc00;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Enlace */
+a {
+  color: var(--azul);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ANIMACIONES */
+@keyframes fadein {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoom {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadein { animation: fadein 1s ease forwards; }
+.animate-slideleft { animation: slideleft 1s ease forwards; }
+.animate-slideright { animation: slideright 1s ease forwards; }
+@keyframes slideleft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideright {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .registro-container {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .registro-left {
+    padding: 40px 20px;
+  }
+
+  .registro-right {
+    padding: 30px 25px;
+  }
+
+  .logo-bg {
+    width: 170px;
+    height: 170px;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+}

@@ -1,0 +1,43 @@
+/* Navbar */
+.navbar {
+  background-color: var(--azul-puebla);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 12px 20px; /* más espacio arriba/abajo y lateral */
+  height: auto; /* deja que se ajuste al contenido */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* separa logo y texto */
+}
+
+.navbar-brand .logo-bg {
+  background-color: white;
+  padding: 6px; /* más espacio dentro del recuadro del logo */
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--gris-sep);
+  color: white;
+  padding: 12px 20px; /* más padding arriba y abajo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* separa imágenes y texto */
+  flex-wrap: wrap; /* evita que se superpongan en pantallas pequeñas */
+}
+
+.footer img {
+  width: 50px;
+  height: auto;
+  margin: 0 10px; /* separa imágenes del texto */
+}
+
+.footer .footer-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ddd;
+}

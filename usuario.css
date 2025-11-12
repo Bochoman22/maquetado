@@ -1,0 +1,236 @@
+:root {
+  --azul-puebla: #005BAC;
+  --gris-sep: #4A4A4A;
+  --amarillo-claro: #FFD447;
+  --input-shadow: rgba(0,0,0,0.15);
+  --btn-hover-shadow: rgba(0,0,0,0.25);
+  --table-hover: rgba(255,212,71,0.2);
+  --form-icon-color: #999;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e2e8f0, #f0f2f5);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar fijo */
+.navbar {
+  background-color: var(--azul-puebla);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.logo-bg {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.logo-bg img {
+  width: 50px;
+  height: auto;
+}
+
+/* Contenido */
+main {
+  flex: 1 0 auto;
+  margin-top: 100px; /* espacio debajo del navbar */
+  margin-bottom: 100px; /* espacio encima del footer */
+  padding: 20px;
+}
+
+/* Formulario premium */
+h4 {
+  color: var(--azul-puebla);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+form {
+  background-color: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px var(--input-shadow);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+/* Input con icono */
+.input-group-text {
+  background-color: #f0f2f5;
+  border: 1px solid var(--azul-puebla);
+  border-radius: 12px 0 0 12px;
+  color: var(--form-icon-color);
+}
+
+.form-control {
+  border: 1px solid var(--azul-puebla);
+  border-radius: 0 12px 12px 0;
+  padding: 10px 15px;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--amarillo-claro);
+  box-shadow: 0 0 10px var(--input-shadow);
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px var(--btn-hover-shadow);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #003f7d;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px var(--btn-hover-shadow);
+}
+
+/* Tabla premium */
+.table-container {
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--input-shadow);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  min-width: 600px;
+}
+
+thead th {
+  background-color: var(--azul-puebla);
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody td {
+  text-align: center;
+  padding: 12px 10px;
+  vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: var(--table-hover);
+  cursor: pointer;
+}
+
+.btn-sm {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn-warning {
+  background-color: #ffbb33;
+  border: none;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #ff4444;
+  border: none;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Footer fijo */
+.footer {
+  background-color: var(--gris-sep);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+.footer img {
+  width: 70px;
+}
+
+.footer .footer-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
