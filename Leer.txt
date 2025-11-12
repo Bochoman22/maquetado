@@ -1,0 +1,1 @@
+Pusimos nuestras vistas en html y  css sin nada de php
